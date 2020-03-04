@@ -11,26 +11,66 @@ Each test is a dict with
 TESTS = {
     "Basics": [
         {
-            "input": [3, 2],
-            "answer": 5,
-            "explanation": "3+2=?"
+            "input": ['hi world im here', ['world', 'here']],
+            "answer": True,
         },
         {
-            "input": [5, 7],
-            "answer": 12,
-            "explanation": "5+7=?"
-        }
+            "input": ['hi world im here', ['here', 'world']],
+            "answer": False,
+        },
+        {
+            "input": ['hi world im here', ['world']],
+            "answer": True,
+        },
+        {
+            "input": ['hi world im here', ['world', 'here', 'hi']],
+            "answer": False,
+        },
+        {
+            "input": ['hi world im here', ['world', 'im', 'here']],
+            "answer": True,
+        },
+        {
+            "input": ['hi world im here', ['world', 'hi', 'here']],
+            "answer": False,
+        },
+        {
+            "input": ['hi world im here', ['world', 'world']],
+            "answer": False,
+        },
+        {
+            "input": ['hi world im here', ['country', 'world']],
+            "answer": False,
+        },
+        {
+            "input": ['hi world im here', ['wo', 'rld']],
+            "answer": False,
+        },
+        {
+            "input": ['', ['world', 'here']],
+            "answer": False,
+        },
     ],
     "Extra": [
         {
-            "input": [6, 3],
-            "answer": 9,
-            "explanation": "6+3=?"
+            "input": ['london in the capital of great britain', ['London', ]],
+            "answer": False,
         },
         {
-            "input": [6, 7],
-            "answer": 13,
-            "explanation": "6+7=?"
-        }
+            "input": ['london in the capital of great britain', ['london', ]],
+            "answer": True,
+        },
+        {
+            "input": ['london in the capital of great britain', ['london', 'great']],
+            "answer": True,
+        },
+        {
+            "input": ['london in the capital of great britain', ['london', 'of', 'great']],
+            "answer": True,
+        },
+        {
+            "input": ['london in the capital of great britain', ['britain', 'great']],
+            "answer": False,
+        },
     ]
 }

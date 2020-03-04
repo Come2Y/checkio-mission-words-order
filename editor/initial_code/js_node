@@ -1,19 +1,32 @@
 "use strict";
 
-function sumTwo(a, b) {
-    // sums two passed arguments
-
+function wordsOrder(a, b) {
     // your code here
-    return 0;
+    return undefined;
 }
 
 var assert = require('assert');
+
 if (!global.is_checking) {
     console.log('Example:');
-    console.log(sumTwo(3, 2));
+    console.log(wordsOrder('hi world im here', ['world', 'here']));
 
-    // These "asserts" are used for self-checking and not for an auto-testing
-    assert.equal(sumTwo(3, 2), 5);
-    assert.equal(sumTwo(5, 7), 12);
+    // These "asserts" are used for self-checking
+    assert.equal(wordsOrder('hi world im here', ['world', 'here']), true);
+    assert.equal(wordsOrder('hi world im here', ['here', 'world']), false);
+    assert.equal(wordsOrder('hi world im here', ['world']), true);
+    assert.equal(wordsOrder('hi world im here',
+ ['world', 'here', 'hi']), false);
+    assert.equal(wordsOrder('hi world im here',
+ ['world', 'im', 'here']), true);
+    assert.equal(wordsOrder('hi world im here',
+ ['world', 'hi', 'here']), false);
+    assert.equal(wordsOrder('hi world im here', ['world', 'world']), false);
+    assert.equal(wordsOrder('hi world im here',
+ ['country', 'world']), false);
+    assert.equal(wordsOrder('hi world im here', ['wo', 'rld']), false);
+    assert.equal(wordsOrder('', ['world', 'here']), false);
+
     console.log("Coding complete? Click 'Check' to earn cool rewards!");
 }
+    
