@@ -54,6 +54,10 @@ TESTS = {
             "input": ['hi world world im here', ['world', 'world']],
             "answer": False,
         },
+        {
+            "input": ['hi world hi', ['world', 'hi']],
+            "answer": False,
+        },
     ],
     "Extra": [
         {
